@@ -1,0 +1,13 @@
+services:
+  ganache:
+    image: "trufflesuite/ganache:v7.9.2"
+    volumes:
+      - "./ganache:/ganache"
+    ports:
+      - "8545:8545"
+    command:
+      - --database.dbPath=/ganache/chaindata
+      - --networkId
+      - "5777"
+      - --wallet.accountKeysPath=/ganache/account
+      - -d
